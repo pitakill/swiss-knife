@@ -1,3 +1,4 @@
+//go:generate go run gen.go
 package slice
 
 import (
@@ -7,8 +8,6 @@ import (
 	"runtime"
 	"strings"
 )
-
-//go:generate go run gen.go
 
 func getFuncName(i interface{}) string {
 	return runtime.FuncForPC(reflect.ValueOf(i).Pointer()).Name()
