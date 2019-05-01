@@ -13,7 +13,7 @@ func main() {
 	// String
 	stringsToTransform := []string{"Hello", "World"}
 
-	if err := slice.StringForEach(stringsToTransform, func(s string, i int) {
+	if err := slice.ForEach(stringsToTransform, func(s string, i int) {
 		stringsToTransform[i] = strings.ToUpper(s)
 	}); err != nil {
 		log.Fatal(err)
@@ -21,7 +21,7 @@ func main() {
 
 	fmt.Println(stringsToTransform)
 
-	if err := slice.StringForEach(stringsToTransform, func(s string, i int) error {
+	if err := slice.ForEach(stringsToTransform, func(s string, i int) error {
 		fmt.Println(s, i)
 		return nil
 	}); err != nil {
@@ -32,7 +32,7 @@ func main() {
 	intsToTranform := []int{23, 458}
 	var add int
 
-	if err := slice.IntForEach(intsToTranform, func(i int) {
+	if err := slice.ForEach(intsToTranform, func(i int) {
 		add += i
 	}); err != nil {
 		log.Fatal(err)
