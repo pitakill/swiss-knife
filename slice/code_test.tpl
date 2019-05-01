@@ -7,27 +7,33 @@ import (
 	"reflect"
 	"testing"
 )
-{{ range .Types }}
-func Test{{ Title . }}ForEach(t *testing.T) {
-	inputInterface := getInput({{ printf "%q" . }})
-	input := inputInterface.([]{{ . }})
 
-	expectInterface := getExpect({{ printf "%q" . }})
-	expect := expectInterface.([]{{ . }})
+func TestForEach(t *testing.T) {
+	t.Run("Testing ForEach", func(t *testing.T) {
+	{{ range .Types }}
+		t.Run("Testing {{ . }}ForEach", func (t *testing.T) {
+			inputInterface := getInput({{ printf "%q" . }})
+			input := inputInterface.([]{{ . }})
 
-	current := make([]{{ . }}, len(expect))
+			expectInterface := getExpect({{ printf "%q" . }})
+			expect := expectInterface.([]{{ . }})
 
-	if err := {{ Title . }}ForEach(input, func(e {{ . }}, i int) {
-		current[i] = {{ . }}Function(e)
-	}); err != nil {
-		t.Errorf("running {{ Title . }}ForEach got the error: %s", err.Error())
-	}
+			current := make([]{{ . }}, len(expect))
 
-	if got := reflect.DeepEqual(current, expect); !got {
-		t.Errorf("{{ Title . }}ForEach returns %v; expected %v", current, expect)
-	}
+			t.Logf("Testing {{ . }}ForEach(%v, func(e {{ . }}, i int))", input)
+			if err := {{ . }}ForEach(input, func(e {{ . }}, i int) {
+				current[i] = {{ . }}Function(e)
+			}); err != nil {
+				t.Errorf("running {{ . }}ForEach got the error: %s", err.Error())
+			}
+
+			if got := reflect.DeepEqual(current, expect); !got {
+				t.Errorf("{{ . }}ForEach returns %v; expected %v", current, expect)
+			}
+		})
+	{{ end }}
+	})
 }
-{{ end }}
 
 func TestIncludes(t *testing.T) {
 	t.Run("Testing Includes", func(t *testing.T) {

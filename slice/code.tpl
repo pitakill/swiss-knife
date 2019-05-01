@@ -5,6 +5,17 @@ package slice
 
 import "fmt"
 
+func ForEach(inputInterface interface{}, function interface{}) error {
+	switch input := inputInterface.(type) {
+	{{ range .Types }}
+	case []{{ . }}:
+		return {{ . }}ForEach(input, function)
+	{{ end }}
+	}
+
+	return nil
+}
+
 func Includes(inputInterface interface{}, eInterface interface{}, indexes ...int) (bool, error) {
 	switch e := eInterface.(type) {
 	{{ range .Types }}
@@ -22,8 +33,8 @@ func Includes(inputInterface interface{}, eInterface interface{}, indexes ...int
 }
 
 {{ range .Types }}
-// {{ Title . }}
-func {{ Title . }}ForEach(input []{{ . }}, function interface{}) error {
+// {{ . }}
+func {{ . }}ForEach(input []{{ . }}, function interface{}) error {
 	if !(isFunc(function)) {
 		e := fmt.Sprintf("parameter (%s) is not a function", function)
 		return newError(e)
