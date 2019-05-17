@@ -5,4 +5,6 @@ jobs:
       - image: circleci/golang:1.12.5
     steps:
       - checkout
-      - run: cd slice && go generate && go test ./...
+      - run: cd slice && go generate && go test -race -coverprofile=coverage.txt -covermode=atomic
+      - run: bash <(curl -s https://codecov.io/bash)
+
