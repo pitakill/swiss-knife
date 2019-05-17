@@ -1,5 +1,24 @@
-[![CircleCI](https://circleci.com/gh/pitakill/swiss-knife.svg?style=svg)](https://circleci.com/gh/pitakill/swiss-knife)
-[![Build Status](https://cloud.drone.io/api/badges/pitakill/swiss-knife/status.svg)](https://cloud.drone.io/pitakill/swiss-knife)
+<p align="center">
+  <h3 align="center">Swiss Knife</h3>
+  <p align="center">An effort to bring JS Prototype to Go</p>
+  <p align="center">
+    <!--<a href="https://godoc.org/github.com/pitakill/swiss-knife">-->
+      <!--<img src="https://godoc.org/github.com/pitakill/swiss-knife?status.svg">-->
+    <!--</a>-->
+    <a href="https://goreportcard.com/report/github.com/pitakill/swiss-knife">
+      <img src="https://goreportcard.com/badge/github.com/pitakill/swiss-knife?v=1.0.0">
+    </a>
+    <a href="https://github.com/pitakill/swiss-knife/blob/master/LICENSE">
+      <img src="https://img.shields.io/badge/LICENSE-MIT-orange.svg">
+    </a>
+    <a href="https://circleci.com/gh/pitakill/swiss-knife">
+      <img src="https://circleci.com/gh/pitakill/swiss-knife.svg?style=svg">
+    </a>
+    <a href="https://cloud.drone.io/pitakill/swiss-knife">
+      <img src="https://cloud.drone.io/api/badges/pitakill/swiss-knife/status.svg">
+    </a>
+  </p>
+</p>
 
 # Rational
 
