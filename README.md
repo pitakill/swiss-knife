@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/pitakill/swiss-knife.svg?style=svg)](https://circleci.com/gh/pitakill/swiss-knife)
+
 # Rational
 
 Make the learning curve from js to Go smoother, in the way achieving this
