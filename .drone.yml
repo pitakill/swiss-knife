@@ -1,0 +1,15 @@
+kind: pipeline
+name: default
+workspace:
+  base: /go
+  path: src/github.com/pitakill/swiss-knife
+steps:
+  - name: generate
+    image: golang
+    commands:
+      - cd slice
+      - go generate
+  - name: test
+    image: golang
+    commands:
+      - go test ./...
