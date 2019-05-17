@@ -1,4 +1,3 @@
-//go:generate go run gen.go
 package slice
 
 import (
@@ -72,4 +71,13 @@ func isFunc(fn interface{}) bool {
 
 func newError(e string) error {
 	return errors.New(e)
+}
+
+func isFuncReturnError(fn interface{}) error {
+	if !(isFunc(fn)) {
+		e := fmt.Sprintf("parameter (%s) is not a function", fn)
+		return newError(e)
+	}
+
+	return nil
 }

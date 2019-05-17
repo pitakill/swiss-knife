@@ -108,3 +108,45 @@ func TestIncludes(t *testing.T) {
 	{{ end }}
 	})
 }
+
+func TestMap(t *testing.T) {
+	t.Run("Testing Map", func(t *testing.T) {
+	{{ range .Types }}
+		t.Run("Testing {{ . }}Map", func (t *testing.T) {
+			inputInterface := getInput({{ printf "%q" . }})
+			input := inputInterface.([]{{ . }})
+
+			expect := input
+
+			t.Logf("Testing {{ . }}Map(%v, func(e {{ . }}, i int)) interface{}", input)
+			current, err := {{ . }}Map(input, func(e {{ . }}, i int) interface{} {
+				return e
+			})
+			if err != nil {
+				t.Errorf("running {{ . }}Map got the error: %s", err.Error())
+			}
+
+			for i, e := range expect {
+				if got := reflect.DeepEqual(e, input[i]); !got {
+					t.Errorf("{{ . }}Map returns %v; expected %v", current[i], expect[i])
+				}
+			}
+
+			t.Logf("Testing {{ . }}Map(%v, func(e {{ . }}) interface{}", input)
+			current, err = {{ . }}Map(input, func(e {{ . }}) interface{} {
+				return e
+			})
+			if err != nil {
+				t.Errorf("running {{ . }}Map got the error: %s", err.Error())
+			}
+
+			for i, e := range expect {
+				if got := reflect.DeepEqual(e, input[i]); !got {
+					t.Errorf("{{ . }}Map returns %v; expected %v", current[i], expect[i])
+				}
+			}
+
+		})
+	{{ end }}
+	})
+}

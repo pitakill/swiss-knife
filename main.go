@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"strconv"
 	"strings"
 
 	"github.com/pitakill/swiss-knife/slice"
@@ -39,4 +40,24 @@ func main() {
 	}
 
 	fmt.Println(add)
+
+	// String
+	t, err := slice.StringMap(stringsToTransform, func(s string, i int) string {
+		return s + "_" + strconv.Itoa(i)
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("%v\t%T\n%v\t%T\n", t, t, stringsToTransform, stringsToTransform)
+
+	// Interface
+	s, err := slice.Map(stringsToTransform, func(s string, i int) string {
+		return s + "_" + strconv.Itoa(i)
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("%v\t%T\n%v\t%T\n", s, s, stringsToTransform, stringsToTransform)
 }

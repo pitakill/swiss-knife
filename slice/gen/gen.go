@@ -1,6 +1,7 @@
-// +build ignore
+// This program generate slice.go and slice_test.go in the upper directory
 
-// This program generate slice.go and slice_test.go
+//go:generate go run gen.go
+//go:generate gofmt -s -w ../../slice
 package main
 
 import (
@@ -43,7 +44,7 @@ var (
 	// Output file + .go; Input file without .tpl
 	relations = map[string]string{
 		"slices":      "code",
-		"slices_test": "code_test",
+		"slices_test": "test",
 	}
 
 	tplFuncs = template.FuncMap{
@@ -60,7 +61,7 @@ func main() {
 }
 
 func generateCode(output, input string, tpl *template.Template) {
-	f, err := os.Create(output + ".go")
+	f, err := os.Create("../" + output + ".go")
 	die(err)
 	defer f.Close()
 
