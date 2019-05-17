@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/pitakill/swiss-knife.svg?style=svg)](https://circleci.com/gh/pitakill/swiss-knife)
+[![Build Status](https://cloud.drone.io/api/badges/pitakill/swiss-knife/status.svg)](https://cloud.drone.io/pitakill/swiss-knife)
 
 # Rational
 
