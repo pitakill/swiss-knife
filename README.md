@@ -14,6 +14,9 @@
     <a href="https://circleci.com/gh/pitakill/swiss-knife">
       <img src="https://circleci.com/gh/pitakill/swiss-knife.svg?style=svg">
     </a>
+    <a href="https://codecov.io/gh/pitakill/swiss-knife">
+      <img src="https://codecov.io/gh/pitakill/swiss-knife/branch/master/graph/badge.svg" />
+    </a>
     <a href="https://cloud.drone.io/pitakill/swiss-knife">
       <img src="https://cloud.drone.io/api/badges/pitakill/swiss-knife/status.svg">
     </a>
