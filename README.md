@@ -6,7 +6,7 @@
       <!--<img src="https://godoc.org/github.com/pitakill/swiss-knife?status.svg">-->
     <!--</a>-->
     <a href="https://goreportcard.com/report/github.com/pitakill/swiss-knife">
-      <img src="https://goreportcard.com/badge/github.com/pitakill/swiss-knife?v=1.0.0">
+      <img src="https://goreportcard.com/badge/github.com/pitakill/swiss-knife">
     </a>
     <a href="https://github.com/pitakill/swiss-knife/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/LICENSE-MIT-orange.svg">
