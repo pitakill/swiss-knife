@@ -11,6 +11,7 @@
     <a href="https://github.com/pitakill/swiss-knife/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/LICENSE-MIT-orange.svg">
     </a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fpitakill%2Fswiss-knife?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpitakill%2Fswiss-knife.svg?type=shield"/></a>
     <a href="https://circleci.com/gh/pitakill/swiss-knife">
       <img src="https://circleci.com/gh/pitakill/swiss-knife.svg?style=svg">
     </a>
@@ -22,6 +23,9 @@
     </a>
   </p>
 </p>
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpitakill%2Fswiss-knife.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpitakill%2Fswiss-knife?ref=badge_large)
 
 # Rational
 
